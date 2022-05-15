@@ -1,5 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
 body {
-    min-height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,8 +25,8 @@ body {
 
 .wrapper {
     display: flex; 
-    max-width: 650px;
-    transition: 0.6s ease-in-out;
+    max-width: 550px;
+    transition: 1s ease-in-out;
 }
 
 .wrapper img {
@@ -29,9 +37,12 @@ body {
 .btn-wrapper {
     display: flex;
     gap: 5px  ;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
 }
-
+.btn-wrapper .labels {
+    
+}
 .btn-wrapper label{
     padding: 1rem;
     background-color: green;
@@ -46,16 +57,48 @@ body {
     background-color: rgb(226, 207, 207);
 }
 
+.signature {
+    width: 50%;
+    overflow: hidden;
+}
 
-.slider #btn1:checked ~ .images .wrapper {
+.signature-wrapper {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: 1s ease-in-out;
+}
+
+.text {
+    display: flex;
+    min-width: 100%;
+    font-size: 22px;
+}
+
+
+.slider #btn1:checked ~ .images .wrapper{
     transform: translateX(0);
 }
-.slider #btn2:checked ~ .images .wrapper {
+.slider #btn2:checked ~ .images .wrapper{
     transform: translateX(-100%);
 }
-.slider #btn3:checked ~ .images .wrapper {
+.slider #btn3:checked ~ .images .wrapper{
     transform: translateX(-200%);
 }
 .slider #btn4:checked ~ .images .wrapper {
+    transform: translateX(-300%);
+}
+
+
+.slider #btn1:checked ~ .btn-wrapper .signature .signature-wrapper {
+    transform: translateX(0);
+}
+.slider #btn2:checked ~ .btn-wrapper .signature .signature-wrapper {
+    transform: translateX(-100%);
+}
+.slider #btn3:checked ~ .btn-wrapper .signature .signature-wrapper {
+    transform: translateX(-200%);
+}
+.slider #btn4:checked ~ .btn-wrapper .signature .signature-wrapper {
     transform: translateX(-300%);
 }
